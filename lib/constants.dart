@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/components/navigation/nav_bar_item.dart';
 
-/// ## App default colors
+/// App default colors
 /// These colors are used to customize a lot of app content
 class AppColors {
   static Color primaryColor = Colors.purple.shade400;

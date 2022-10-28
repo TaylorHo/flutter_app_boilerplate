@@ -2,10 +2,12 @@ import 'package:flutter_app_template/constants.dart';
 import 'package:flutter_app_template/helpers/navigation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_template/helpers/storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  StorageHelper().initStorage();
   runApp(
     // Locale and language configuration
     // See more at https://pub.dev/packages/easy_localization
