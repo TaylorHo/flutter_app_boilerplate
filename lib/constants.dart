@@ -35,7 +35,6 @@ class SideBarOptions {
 
   SideBarOptions(this.context);
 
-  /// Title of the App
   late List<SideBarItem> sideBarItems = [
     SideBarItem(
       text: 'menu_options.option1', // Easy Localization Key of the option
