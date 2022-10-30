@@ -1,1 +1,9 @@
-{}
+{
+  "cancel": "Cancelar",
+  "change_language": "Cambiar Idioma",
+  "menu_options": {
+    "option1": "Opción 1",
+    "option2": "Opción 2",
+    "option3": "Opción 3"
+  }
+}

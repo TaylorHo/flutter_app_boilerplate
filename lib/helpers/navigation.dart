@@ -1,9 +1,11 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_app_template/constants.dart';
-import 'package:flutter_app_template/components/navigation/app_bar.dart';
+import 'package:flutter_app_template/components/navigation/app_top_bar.dart';
 import 'package:flutter_app_template/components/navigation/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/components/navigation/nav_bar_item.dart';
+import 'package:flutter_app_template/helpers/storage.dart';
 
 /// ## Bottom navigation bar
 /// Options can be configured at lib/constants.dart, under navBarPages option
@@ -17,6 +19,21 @@ class NavigationHelper extends StatefulWidget {
 class _NavigationHelperState extends State<NavigationHelper> {
   int _currentIndex = 1;
   final List<NavBarItem> _pages = NavBarOptions().navBarPages;
+
+  @override
+  void initState() {
+    _verifySavedLanguage();
+    super.initState();
+  }
+
+  /// Verify if there's any language saved and, if exists, apply this language.
+  void _verifySavedLanguage() async {
+    dynamic response = await StorageHelper().getData('language');
+    if (response != null) {
+      // ignore: use_build_context_synchronously
+      context.setLocale(Locale(response));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/components/navigation/nav_bar_item.dart';
+import 'package:flutter_app_template/helpers/language.dart';
 
 /// App default colors
 /// These colors are used to customize a lot of app content
@@ -14,7 +15,7 @@ class NavBarOptions {
   List<NavBarItem> navBarPages = [
     NavBarItem(
       pageComponent: Container(),
-      icon: Icons.home,
+      icon: Icons.reorder,
     ),
     NavBarItem(
       pageComponent: Container(),
@@ -22,7 +23,7 @@ class NavBarOptions {
     ),
     NavBarItem(
       pageComponent: Container(),
-      icon: Icons.home,
+      icon: Icons.settings,
     ),
   ];
 }
@@ -34,22 +35,71 @@ class SideBarOptions {
   SideBarOptions(this.context);
 
   /// Title of the App
-  String appTitle = 'My App Title';
+  String appTitle = 'Flutter Starter';
   late List<SideBarItem> sideBarItems = [
     SideBarItem(
-      text: 'Option 1',
+      text: 'menu_options.option1', // Easy Localization Key of the option
       icon: Icons.star,
       onTap: () => Navigator.of(context).pop(),
     ),
     SideBarItem(
-      text: 'Option 2',
+      text: 'menu_options.option2', // Easy Localization Key of the option
       icon: Icons.star,
       onTap: () => Navigator.of(context).pop(),
     ),
     SideBarItem(
-      text: 'Option 3',
+      text: 'menu_options.option3', // Easy Localization Key of the option
       icon: Icons.star,
       onTap: () => Navigator.of(context).pop(),
+    ),
+    SideBarItem(
+      text: 'change_language', // Easy Localization Key of the option
+      icon: Icons.translate,
+      onTap: () => LanguageHelper().chooseLanguage(context),
     ),
   ];
+}
+
+/// Array of available language options.
+class LanguageOptions {
+  /// Available languages.
+  ///
+  /// To add more, add a language json file at /assets/translations/ folder, with the language code as name.
+  /// Also, add a flag to /assets/flags/, and then populate this array.
+  List<LanguageOption> languages = [
+    LanguageOption(
+      flag: 'assets/flags/usa.png',
+      language: 'English',
+      locale: const Locale('en'),
+    ),
+    LanguageOption(
+      flag: 'assets/flags/brazil.png',
+      language: 'Português',
+      locale: const Locale('pt'),
+    ),
+    LanguageOption(
+      flag: 'assets/flags/spain.png',
+      language: 'Español',
+      locale: const Locale('es'),
+    ),
+  ];
+}
+
+/// Single language option, used to show a language on the pop-up to change the current app language.
+class LanguageOption {
+  /// Path from where the language flag image is
+  String flag;
+
+  /// The name of the Language, to be showed at the LanguageHelper. This string isn't a Easy Localization key,
+  /// because it's better to show the language name as the intended language.
+  String language;
+
+  /// The Locale of the anguage. Just the languageCode, without the countryCode.
+  Locale locale;
+
+  LanguageOption({
+    required this.language,
+    required this.flag,
+    required this.locale,
+  });
 }

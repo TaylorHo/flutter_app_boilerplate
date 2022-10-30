@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/constants.dart';
 
@@ -15,7 +17,7 @@ class SideBarComponent extends StatelessWidget {
         children: <Widget>[
           ListTile(
             title: Padding(
-              padding: const EdgeInsets.only(bottom: 20, top: 40),
+              padding: const EdgeInsets.only(bottom: 20, top: kIsWeb ? 20 : 40),
               // Here goes the App Title on the Sidebar Drawer Menu
               child: Text(
                 SideBarOptions(context).appTitle,
@@ -31,7 +33,9 @@ class SideBarComponent extends StatelessWidget {
             SideBarOptions(context).sideBarItems.length,
             (index) => ListTile(
               leading: Icon(SideBarOptions(context).sideBarItems[index].icon),
-              title: Text(SideBarOptions(context).sideBarItems[index].text),
+              title: Text(
+                SideBarOptions(context).sideBarItems[index].text.tr(),
+              ),
               onTap: SideBarOptions(context).sideBarItems[index].onTap,
             ),
           ),

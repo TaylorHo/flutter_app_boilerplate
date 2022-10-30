@@ -37,7 +37,8 @@ class StorageHelper {
       await openedBox!.put(key, data);
       return true;
     } catch (e) {
-      return false;
+      throw Exception(
+          'The Storage helper only store primitive data types. If you need other types, take a look at Hive types Adapters: https://docs.hivedb.dev/#/custom-objects/type_adapters');
     }
   }
 
