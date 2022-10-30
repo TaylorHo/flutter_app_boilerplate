@@ -1,8 +1,17 @@
-import 'package:flutter_app_template/constants.dart';
 import 'package:flutter_app_template/helpers/navigation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/helpers/storage.dart';
+
+double fontSizeMultiplier = 1;
+
+class GeneralOptions {
+  String appTitle = 'Flutter Starter';
+  double titleFontSize = 24 * fontSizeMultiplier;
+  double subtitleFontSize = 18 * fontSizeMultiplier;
+  double textFontSize = 16 * fontSizeMultiplier;
+  double smallTextFontSize = 14 * fontSizeMultiplier;
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +36,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: SideBarOptions(context).appTitle,
+      title: GeneralOptions().appTitle,
       theme: ThemeData(
         primaryColor: Colors.grey[800],
       ),

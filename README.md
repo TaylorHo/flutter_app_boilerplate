@@ -1,6 +1,6 @@
 # Flutter App Template
 
-_A ready to use app template, that already comes with the navigation structure, multi-language support and storage helpers (oncoming)._
+_A ready to use app template, that already comes with the navigation structure, multi-language support, storage and accessibility helpers._
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="./.github/screenshot-1.png" width="260">
@@ -16,7 +16,8 @@ This template includes the following features:
 - [x] Internationalization
 - [x] Custom Mobile icons
 - [x] Bottom Nav Menu
-- [ ] Storage Manager (oncoming)
+- [x] Storage Manager
+- [x] Accessibility options
 
 ---
 ## What you need to know

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/components/navigation/nav_bar_item.dart';
+import 'package:flutter_app_template/helpers/accessibility.dart';
 import 'package:flutter_app_template/helpers/language.dart';
 
 /// App default colors
@@ -35,7 +36,6 @@ class SideBarOptions {
   SideBarOptions(this.context);
 
   /// Title of the App
-  String appTitle = 'Flutter Starter';
   late List<SideBarItem> sideBarItems = [
     SideBarItem(
       text: 'menu_options.option1', // Easy Localization Key of the option
@@ -48,14 +48,14 @@ class SideBarOptions {
       onTap: () => Navigator.of(context).pop(),
     ),
     SideBarItem(
-      text: 'menu_options.option3', // Easy Localization Key of the option
-      icon: Icons.star,
-      onTap: () => Navigator.of(context).pop(),
-    ),
-    SideBarItem(
-      text: 'change_language', // Easy Localization Key of the option
+      text: 'menu_options.language', // Easy Localization Key of the option
       icon: Icons.translate,
       onTap: () => LanguageHelper().chooseLanguage(context),
+    ),
+    SideBarItem(
+      text: 'menu_options.accessibility', // Easy Localization Key of the option
+      icon: Icons.accessibility,
+      onTap: () => AccessibilityHelper().chooseAccessibilityOptions(context),
     ),
   ];
 }

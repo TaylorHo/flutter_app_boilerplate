@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/constants.dart';
+import 'package:flutter_app_template/main.dart';
 
 /// ## Sidebar Menu Drawer
 /// Sidebar menu options, configured at lib/contants.dart, sideBarItems
@@ -20,10 +21,10 @@ class SideBarComponent extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 20, top: kIsWeb ? 20 : 40),
               // Here goes the App Title on the Sidebar Drawer Menu
               child: Text(
-                SideBarOptions(context).appTitle,
-                style: const TextStyle(
+                GeneralOptions().appTitle,
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: GeneralOptions().titleFontSize,
                 ),
               ),
             ),
@@ -35,6 +36,9 @@ class SideBarComponent extends StatelessWidget {
               leading: Icon(SideBarOptions(context).sideBarItems[index].icon),
               title: Text(
                 SideBarOptions(context).sideBarItems[index].text.tr(),
+                style: TextStyle(
+                  fontSize: GeneralOptions().textFontSize,
+                ),
               ),
               onTap: SideBarOptions(context).sideBarItems[index].onTap,
             ),

@@ -6,6 +6,7 @@ import 'package:flutter_app_template/components/navigation/side_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_template/components/navigation/nav_bar_item.dart';
 import 'package:flutter_app_template/helpers/storage.dart';
+import 'package:flutter_app_template/main.dart';
 
 /// ## Bottom navigation bar
 /// Options can be configured at lib/constants.dart, under navBarPages option
@@ -23,15 +24,29 @@ class _NavigationHelperState extends State<NavigationHelper> {
   @override
   void initState() {
     _verifySavedLanguage();
+    _verifyFontSizePreferences();
     super.initState();
   }
 
   /// Verify if there's any language saved and, if exists, apply this language.
   void _verifySavedLanguage() async {
-    dynamic response = await StorageHelper().getData('language');
+    dynamic response = await StorageHelper().getData(
+      'language',
+      box: 'user_settings',
+    );
     if (response != null) {
       // ignore: use_build_context_synchronously
       context.setLocale(Locale(response));
+    }
+  }
+
+  void _verifyFontSizePreferences() async {
+    dynamic response = await StorageHelper().getData(
+      'font_size',
+      box: 'user_settings',
+    );
+    if (response != null) {
+      fontSizeMultiplier = response;
     }
   }
 

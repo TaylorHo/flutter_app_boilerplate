@@ -1,9 +1,13 @@
 {
   "cancel": "Cancelar",
-  "change_language": "Mudar Idioma",
+  "save": "Salvar",
   "menu_options": {
     "option1": "Opção 1",
     "option2": "Opção 2",
-    "option3": "Opção 3"
+    "language": "Mudar Idioma",
+    "accessibility": "Acessibilidade"
+  },
+  "accessibility": {
+    "font_size": "Tamanho da Fonte"
   }
 }
