@@ -5,6 +5,7 @@ import 'package:flutter_app_template/helpers/storage.dart';
 
 double fontSizeMultiplier = 1;
 
+/// General application changes
 class GeneralOptions {
   String appTitle = 'Flutter Starter';
   double titleFontSize = 24 * fontSizeMultiplier;

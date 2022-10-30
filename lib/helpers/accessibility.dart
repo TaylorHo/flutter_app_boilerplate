@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_template/helpers/storage.dart';
 import 'package:flutter_app_template/main.dart';
 
+/// Change accessibility related settings
 class AccessibilityHelper {
   Future<void> chooseAccessibilityOptions(BuildContext context) {
     return showDialog<void>(
@@ -14,6 +15,7 @@ class AccessibilityHelper {
   }
 }
 
+/// Shows an Dialog to change the application Font Size
 class AccessibilityWidget extends StatefulWidget {
   const AccessibilityWidget({super.key});
 
@@ -31,6 +33,7 @@ class _AccessibilityWidgetState extends State<AccessibilityWidget> {
     super.initState();
   }
 
+  /// Apply changes, save it to the device storage, and reload application stack.
   void _onAccessibilityChange(BuildContext context) {
     fontSizeMultiplier =
         double.parse((_fontSizeMultiplier / 100).toStringAsFixed(1));
@@ -40,6 +43,10 @@ class _AccessibilityWidgetState extends State<AccessibilityWidget> {
       box: 'user_settings',
     );
     Navigator.pop(context);
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => const MyApp()),
+      (Route<dynamic> route) => false,
+    );
   }
 
   @override

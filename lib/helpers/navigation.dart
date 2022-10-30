@@ -40,12 +40,13 @@ class _NavigationHelperState extends State<NavigationHelper> {
     }
   }
 
+  /// Verify if the user have any preferences saved on the device storage.
   void _verifyFontSizePreferences() async {
     dynamic response = await StorageHelper().getData(
       'font_size',
       box: 'user_settings',
     );
-    if (response != null) {
+    if (response != null && response != 1) {
       fontSizeMultiplier = response;
     }
   }
