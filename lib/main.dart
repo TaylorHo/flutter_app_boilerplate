@@ -7,7 +7,7 @@ import 'package:flutter_app_template/helpers/storage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  StorageHelper().initStorage();
+  await StorageHelper().initStorage();
   runApp(
     // Locale and language configuration
     // See more at https://pub.dev/packages/easy_localization

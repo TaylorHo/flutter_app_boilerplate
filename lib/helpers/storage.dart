@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:path_provider/path_provider.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 
@@ -17,10 +19,10 @@ class StorageHelper {
 
   /// ## Starts the Storage
   /// Starts Hive storage at default application folder
-  void initStorage() {
+  Future<void> initStorage() async {
     if (!kIsWeb) {
-      String storagePath = Directory.current.path;
-      Hive.init(storagePath);
+      Directory storagePath = await getApplicationDocumentsDirectory();
+      Hive.init(storagePath.path);
     }
   }
 

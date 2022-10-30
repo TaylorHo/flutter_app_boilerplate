@@ -3,8 +3,9 @@
 _A ready to use app template, that already comes with the navigation structure, multi-language support and storage helpers (oncoming)._
 
 <div style="display: flex; justify-content: center; align-items: center;">
-  <img src="./.github/screenshot1.png" width="300">
-  <img src="./.github/screenshot2.png" width="300">
+  <img src="./.github/screenshot-1.png" width="260">
+  <img src="./.github/screenshot-2.png" width="260">
+  <img src="./.github/screenshot-3.png" width="260">
 </div>
 
 ---
