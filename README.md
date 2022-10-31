@@ -85,4 +85,16 @@ _Have you noticed any improvements that can be applied?_ Tell us! Open an issue 
 ### Important considerations
 Always try to follow the [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). Based on an issue, create a fork, then a branch, work on it and then, after finishing it, open a Pull Request! **We appreciate a lot the use of [Conventional Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13)**.
 
+
+### Where to start
+To start contributing, you can add some of theese features:
+
+- [ ] Accessibility: High Contrast
+- [ ] Dark Mode
+- [ ] Splash Screen
+- [ ] Ads Helpers
+- [ ] More pre-made languages
+- [ ] Convert model classes to json like objects, on StorageHelper
+
+---
 Good Luck!
