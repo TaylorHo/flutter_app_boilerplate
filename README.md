@@ -1,6 +1,6 @@
-# Flutter App Template
+# Flutter App Boilerplate
 
-_A ready to use app template, that already comes with the navigation structure, multi-language support, storage and accessibility helpers._
+_A ready to use app boilerplate, that already comes with the navigation structure, multi-language support, storage and accessibility helpers._
 
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="./.github/screenshot-1.png" width="260">
