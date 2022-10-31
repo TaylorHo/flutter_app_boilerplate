@@ -95,6 +95,7 @@ To start contributing, you can add some of theese features:
 - [ ] Ads Helpers
 - [ ] More pre-made languages
 - [ ] Convert model classes to json like objects, on StorageHelper
+- [ ] Add encryption to the StorageHelper
 
 ---
 Good Luck!
